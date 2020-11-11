@@ -1,0 +1,10 @@
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p>A delicious <%= @restaurant.category.capitalize %> restaurant.</p>
+<p><%= link_to "LEAVE A REVIEW", new_restaurant_review_path(@restaurant) %></p>
+<p><%= link_to "UPDATE", edit_restaurant_path %></p>
+<p><%= link_to "Delete #{@restaurant.name}",
+            restaurant_path(@restaurant),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></p>
+<p><%= link_to "HOME", restaurants_path %></p>
